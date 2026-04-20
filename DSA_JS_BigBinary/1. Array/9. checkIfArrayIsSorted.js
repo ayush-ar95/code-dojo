@@ -51,10 +51,10 @@ console.log(everyCheck(unSortedArray));
         Space complexity: O(n) - due to recursive stack.
 */
 
-const usingRecursionCheck = (array, index = 0) => {
-    if (index === array.length - 1)
+const usingRecursionCheck = (array, index = 1) => {
+    if (index === array.length)
         return true;
-    if (array[index] > array[index - 1])
+    if (array[index - 1] > array[index])
         return false;
     return usingRecursionCheck(array, index + 1);
 }
