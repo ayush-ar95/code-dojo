@@ -36,7 +36,28 @@ console.log(bruteCheck(unSortedArray));
         Space complexity: O(1) - no extra space needed.
 */
 
-const everyCheck = (array)=>{
-    array.every((_,index)=>{
-    })
+const everyCheck = (array) => {
+    return array.every((element, index) => index === 0 || array[index - 1] < element);
 }
+
+console.log(everyCheck(array));
+console.log(everyCheck(unSortedArray));
+
+/*
+    ------------ Approach Using Recursion ----------------
+    We can use recursion to simplify the comparison process by breaking the array down and comparing one element at a time.
+
+        Time complexity: O(n) - we check each element once.
+        Space complexity: O(n) - due to recursive stack.
+*/
+
+const usingRecursionCheck = (array, index = 0) => {
+    if (index === array.length - 1)
+        return true;
+    if (array[index] > array[index - 1])
+        return false;
+    return usingRecursionCheck(array, index + 1);
+}
+
+console.log(usingRecursionCheck(array));
+console.log(usingRecursionCheck(unSortedArray));
