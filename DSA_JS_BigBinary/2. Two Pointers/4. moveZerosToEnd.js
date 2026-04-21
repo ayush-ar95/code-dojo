@@ -26,8 +26,17 @@ const bruteMethod = (array) => {
     });
     while (count > 0) {
         newArray.push(0);
+        count--;
     }
     return newArray;
 }
 console.log(bruteMethod(array));
+
+/*
+    ---------- Two pointer approach ------------
+    Use two pointers to move non-zero elements in-place and fill the remaining space with zeros.
+
+        Time complexity: O(n) - one iteration needed
+        Space complexity: O(1) - no extra space used
+*/
 
