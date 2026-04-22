@@ -40,3 +40,18 @@ console.log(bruteMethod(array));
         Space complexity: O(1) - no extra space used
 */
 
+const twoPointerApproach = (array) => {
+    let i = -1;
+    let temp = null;
+    array.forEach((element, index) => {
+        if (element != 0) {
+            i++;
+            temp = array[i];
+            array[i] = element;
+            array[index] = temp;
+        }
+    });
+    return array;
+}
+console.log(twoPointerApproach(array));
+
